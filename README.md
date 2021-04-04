@@ -23,7 +23,7 @@ If you install `winsomnia-ssh` in native Windows, `winsomnia` should work withou
 Add the following line to your `~/.bashrc` or an equivalent file of your environment in WSL.
 
 ```sh
-winsomnia-ssh &
+(winsomnia-ssh &)
 ```
 
 As long as the shell session in WSL that launched `winsomnia-ssh` is active, it will prevent Windows from going to sleep.
