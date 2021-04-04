@@ -5,17 +5,22 @@ It also provides a simple CLI, `winsomnia`, which allows you to pause sleep when
 
 ## Installation
 
+Install `winsomnia-ssh` in WSL by `pip`.
+
 ```sh
 pip install "git+https://github.com/nullpo-head/winsomnia-ssh"
 ```
 
 `winsomnia-ssh` requires `python` both in WSL2 and Windows. Please install Python for Windows via [the official installer](https://www.python.org/downloads/). Please DO NOT install Python via Microsoft store. It appears that the store app cannot be launched from WSL.
 
+If you install `winsomnia-ssh` in native Windows, `winsomnia` should work without problem.
+`winsomnia-ssh` may be able to work, but it's not tested or supported.
+
 ## Usage
 
 ### Prevent sleep while your ssh session in WSL is active
 
-Add the following line to your `~/.bashrc` or an equivalent file of your environment.
+Add the following line to your `~/.bashrc` or an equivalent file of your environment in WSL.
 
 ```sh
 winsomnia-ssh &
