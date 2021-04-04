@@ -14,7 +14,7 @@ ES_CONTINUOUS = 0x80000000
 
 
 def main():
-    parser = argparse.ArgumentParser("prevent-winsleep")
+    parser = argparse.ArgumentParser("winsomnia")
     parser.add_argument("duration", type=int, nargs="?",
                         help="the duration in minutes to prevent Windows from sleeping.")
     parser.add_argument("-q", "--quiet",
@@ -35,7 +35,8 @@ def main():
             sys.stderr.write(
                 "Windows Store app cannot be launched from WSL. Please install Python via the official installer.\n")
 
-        result = subprocess.run(["wslpath", "-w", __file__], capture_output=True)
+        result = subprocess.run(
+            ["wslpath", "-w", __file__], capture_output=True)
         selfpath = result.stdout.strip().decode("utf-8")
         result = subprocess.run(["python.exe", selfpath] + sys.argv[1:])
         sys.exit(result.returncode)

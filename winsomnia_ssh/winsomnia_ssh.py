@@ -35,7 +35,7 @@ def main():
     parent = psutil.Process().parent()
     while parent.is_running():
         if not prevent_winsleep(3):
-            logging.critical("prevent-winsleep failed")
+            logging.critical("winsomnia failed")
             sys.exit(1)
         time.sleep(120)
 
@@ -47,9 +47,9 @@ def check_prerequisite() -> Optional[str]:
         return "python.exe is not in PATH.\n" \
                "Please Install Python for Windows via the official installer. " \
                "DO NOT install python for Windows via Microsoft Store due to a technical problem."
-    result = subprocess.run(["which", "prevent-winsleep"], capture_output=True)
+    result = subprocess.run(["which", "winsomnia"], capture_output=True)
     if path == "":
-        return "prevent-winsleep is not in PATH. Did you install insomni-ssh successfully?"
+        return "winsomnia is not in PATH. Did you install winsomnia-ssh successfully?"
     return None
 
 
@@ -58,7 +58,7 @@ def is_ssh_session() -> bool:
 
 
 def prevent_winsleep(timeout: int) -> bool:
-    result = subprocess.run(["prevent-winsleep", str(timeout), "-q"])
+    result = subprocess.run(["winsomnia", str(timeout), "-q"])
     return result.returncode == 0
 
 

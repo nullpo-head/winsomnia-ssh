@@ -1,7 +1,7 @@
-# Winsomnia-ssh and Prevent-Winsleep
+# Winsomnia-ssh and Winsomnia
 
 `winsomnia-ssh` prevents Windows from going to sleep while your ssh session is active in WSL.
-It also provides a simple CLI, `prevent-winsleep`, which allows you to pause sleep whenever you want, for however long you want.
+It also provides a simple CLI, `winsomnia`, which allows you to pause sleep whenever you want, for however long you want.
 
 ## Installation
 
@@ -30,20 +30,20 @@ Scott's article recommends that `DO NOT DO THE INSTRUCTIONS IN THIS POST` becaus
 
 ### Manually prevent sleep for a while by CLI
 
-`winsomnia-ssh` provides a handy CLI tool, `prevent-winsleep`.
-`prevent-winsleep` allows you to prevent sleep whenever you want, regardless of whether you are in an ssh session or not.
+`winsomnia-ssh` provides a handy CLI tool, `winsomnia`.
+`winsomnia` allows you to prevent sleep whenever you want, regardless of whether you are in an ssh session or not.
 
 ```sh
-prevent-winsleep [duration_in_minutes]
+winsomnia [duration_in_minutes]
 ```
 
-You can quit `prevent-winsleep` to resume Windows Sleep.
+You can quit `winsomnia` to resume Windows Sleep.
 
 ```console
-$ prevent-winsleep
+$ winsomnia
 Trying to run via python.exe
 Kill this program by Ctrl+C to let Windows sleep
 ^C
 ```
 
-See `prevent-winsleep --help` for the detailed usage.
+See `winsomnia --help` for the detailed usage.
