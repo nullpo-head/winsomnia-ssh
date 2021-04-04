@@ -34,6 +34,7 @@ def main():
 
     # daemonize here because the shell that launched this process in its "~/.*rc" is waiting
     daemonize()
+    # TODO: log to file if necessary
 
     logging.info("Detected winsomnia-ssh is running in a ssh session.")
     while session.is_alive():
@@ -58,6 +59,14 @@ def check_prerequisite() -> Optional[str]:
 
 
 def daemonize():
+    sys.stdin.close()
+    sys.stderr.close()
+    sys.stdout.close()
+    sys.stdin = os.devnull
+    null = open(os.devnull, "rw")
+    sys.stdin = null
+    sys.stderr = null
+    sys.stdout = null
     if os.fork() == 0:
         return
     else:
