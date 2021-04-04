@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "winsomnia-ssh"
-version = "0.1.0"
+version = "0.1.1"
 description = """\
               winsomnia-ssh prevents Windows from going to sleep \
               while your ssh session is active in WSL. \
